@@ -15,16 +15,17 @@ class TemperatureController extends Controller
         $datetime = date('Y-m-d h:i:s a', time());
 
         $tem->date_registro = $datetime;
-        $tem->temp = $temp;
+        //$tem->temp = $temp;
+        $tem->log = $temp;
         $tem->save();
 
         return response()->json(['status' => 'ok'] ,200)->header('Access-Control-Allow-Origin', '*')
-            ->header('Content-Type', 'application/json');;
+            ->header('Content-Type', 'application/json');
     }
 
     public function get(){
         $tem = Temperature::all();
         return response()->json($tem, 200)->header('Access-Control-Allow-Origin', '*')
-            ->header('Content-Type', 'application/json');;
+            ->header('Content-Type', 'application/json');
     }
 }

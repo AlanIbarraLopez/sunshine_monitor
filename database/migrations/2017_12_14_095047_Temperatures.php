@@ -17,6 +17,7 @@ class Temperatures extends Migration
             $table->increments('temp_id');
             $table->dateTime('date_registro')->nullable();
             $table->float('temp')->nullable();
+            $table->string('log',1000)->nullable();
         });
     }
 
