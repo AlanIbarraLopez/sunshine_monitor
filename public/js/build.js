@@ -41,7 +41,7 @@ function graficar(msg) {
     //console.log(datos);
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: labels,
             datasets: [{
