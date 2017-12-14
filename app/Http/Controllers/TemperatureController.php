@@ -18,11 +18,13 @@ class TemperatureController extends Controller
         $tem->temp = $temp;
         $tem->save();
 
-        return response()->json(['status' => 'ok'] ,200);
+        return response()->json(['status' => 'ok'] ,200)->header('Access-Control-Allow-Origin', '*')
+            ->header('Content-Type', 'application/json');;
     }
 
     public function get(){
         $tem = Temperature::all();
-        return response()->json($tem, 200);
+        return response()->json($tem, 200)->header('Access-Control-Allow-Origin', '*')
+            ->header('Content-Type', 'application/json');;
     }
 }

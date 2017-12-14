@@ -14,7 +14,7 @@ function build() {
                 graficar(msg);
             }
 
-            if (msg.length > num){
+            if (msg.length != num){
                 num = msg.length;
                 graficar(msg);
             }
